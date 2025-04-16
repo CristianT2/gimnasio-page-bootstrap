@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEOPLE'S GYM - Home</title>
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/logo.png" alt="PEOPLE'S GYM Logo" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="clases.html" id="clasesMenu" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Clases
+                            </a>
+                            <ul class="dropdown-menu mega-menu" aria-labelledby="clasesMenu">
+                                <li><a class="dropdown-item" href="clases.html#musculacion">Musculación</a></li>
+                                <li><a class="dropdown-item" href="clases.html#crossfit">CrossFit</a></li>
+                                <li><a class="dropdown-item" href="clases.html#yoga">Yoga</a></li>
+                                <li><a class="dropdown-item" href="clases.html#spinning">Spinning</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="entrenadores.html">Entrenadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="precios.html">Precios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <button id="theme-toggle" class="btn btn-link text-white" aria-label="Cambiar tema">
+                                <span class="theme-icon">🌙</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="entrenadores py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Nuestros Entrenadores Expertos</h2>
+                <div class="contenedor-entrenadores row justify-content-center">
+                    <!-- Entrenador 1 -->
+                    <div class="col-md-4 col-lg-3 mb-4 tarjeta-entrenador">
+                        <div class="tarjeta-inner">
+                            <div class="tarjeta-frontal">
+                                <img src="assets/img/entrenador1.jpg" alt="Entrenador 1" class="img-fluid">
+                                <h3>Juan Pérez</h3>
+                                <p>Especialidad: Musculación</p>
+                            </div>
+                            <div class="tarjeta-trasera">
+                                <h4>Sobre Juan</h4>
+                                <p>Entrenador certificado con 10 años de experiencia. Apasionado por ayudarte a alcanzar tus metas de fuerza y crecimiento muscular.</p>
+                                <div class="habilidades">
+                                    <div class="habilidad">
+                                        <span>Fuerza</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="90">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habilidad">
+                                        <span>Técnica</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="85">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habilidad">
+                                        <span>Motivación</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="95">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating" data-entrenador="juan">
+                                    <input type="radio" name="rating-juan" value="5" id="juan-5">
+                                    <label for="juan-5" class="estrella"></label>
+                                    <input type="radio" name="rating-juan" value="4" id="juan-4" checked>
+                                    <label for="juan-4" class="estrella"></label>
+                                    <input type="radio" name="rating-juan" value="3" id="juan-3">
+                                    <label for="juan-3" class="estrella"></label>
+                                    <input type="radio" name="rating-juan" value="2" id="juan-2">
+                                    <label for="juan-2" class="estrella"></label>
+                                    <input type="radio" name="rating-juan" value="1" id="juan-1">
+                                    <label for="juan-1" class="estrella"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Entrenador 2 -->
+                    <div class="col-md-4 col-lg-3 mb-4 tarjeta-entrenador">
+                        <div class="tarjeta-inner">
+                            <div class="tarjeta-frontal">
+                                <img src="assets/img/entrenador3.jpg" alt="Entrenadora 2" class="img-fluid">
+                                <h3>Ana Gómez</h3>
+                                <p>Especialidad: Yoga & Flexibilidad</p>
+                            </div>
+                            <div class="tarjeta-trasera">
+                                <h4>Sobre Ana</h4>
+                                <p>Instructora de yoga con enfoque en mejorar la flexibilidad, el equilibrio y la conexión mente-cuerpo. Clases para todos los niveles.</p>
+                                <div class="habilidades">
+                                    <div class="habilidad">
+                                        <span>Flexibilidad</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="92">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habilidad">
+                                        <span>Equilibrio</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="88">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habilidad">
+                                        <span>Relajación</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="98">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating" data-entrenador="ana">
+                                    <input type="radio" name="rating-ana" value="5" id="ana-5" checked>
+                                    <label for="ana-5" class="estrella"></label>
+                                    <input type="radio" name="rating-ana" value="4" id="ana-4">
+                                    <label for="ana-4" class="estrella"></label>
+                                    <input type="radio" name="rating-ana" value="3" id="ana-3">
+                                    <label for="ana-3" class="estrella"></label>
+                                    <input type="radio" name="rating-ana" value="2" id="ana-2">
+                                    <label for="ana-2" class="estrella"></label>
+                                    <input type="radio" name="rating-ana" value="1" id="ana-1">
+                                    <label for="ana-1" class="estrella"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Entrenador 3 -->
+                    <div class="col-md-4 col-lg-3 mb-4 tarjeta-entrenador">
+                        <div class="tarjeta-inner">
+                            <div class="tarjeta-frontal">
+                                <img src="assets/img/entrenador2.avif" alt="Entrenador 3" class="img-fluid">
+                                <h3>Carlos López</h3>
+                                <p>Especialidad: CrossFit & Funcional</p>
+                            </div>
+                            <div class="tarjeta-trasera">
+                                <h4>Sobre Carlos</h4>
+                                <p>Entrenador de CrossFit con experiencia en acondicionamiento físico funcional y de alta intensidad. Te ayudará a superar tus límites.</p>
+                                <div class="habilidades">
+                                    <div class="habilidad">
+                                        <span>Resistencia</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="91">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habilidad">
+                                        <span>Potencia</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="87">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habilidad">
+                                        <span>Agilidad</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="89">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating" data-entrenador="carlos">
+                                    <input type="radio" name="rating-carlos" value="5" id="carlos-5">
+                                    <label for="carlos-5" class="estrella"></label>
+                                    <input type="radio" name="rating-carlos" value="4" id="carlos-4">
+                                    <label for="carlos-4" class="estrella"></label>
+                                    <input type="radio" name="rating-carlos" value="3" id="carlos-3" checked>
+                                    <label for="carlos-3" class="estrella"></label>
+                                    <input type="radio" name="rating-carlos" value="2" id="carlos-2">
+                                    <label for="carlos-2" class="estrella"></label>
+                                    <input type="radio" name="rating-carlos" value="1" id="carlos-1">
+                                    <label for="carlos-1" class="estrella"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Entrenador 4 -->
+                    <div class="col-md-4 col-lg-3 mb-4 tarjeta-entrenador">
+                        <div class="tarjeta-inner">
+                            <div class="tarjeta-frontal">
+                                <img src="assets/img/entrenador4.avif" alt="Entrenadora 4" class="img-fluid">
+                                <h3>Laura Ruiz</h3>
+                                <p>Especialidad: Spinning & Resistencia</p>
+                            </div>
+                            <div class="tarjeta-trasera">
+                                <h4>Sobre Laura</h4>
+                                <p>Instructora de Spinning apasionada por la energía y el ritmo. Te guiará en sesiones intensas para mejorar tu resistencia cardiovascular y quemar calorías.</p>
+                                <div class="habilidades">
+                                    <div class="habilidad">
+                                        <span>Resistencia Cardiovascular</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="94">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habilidad">
+                                        <span>Ritmo</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="91">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habilidad">
+                                        <span>Motivación Energética</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="96">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating" data-entrenador="laura">
+                                    <input type="radio" name="rating-laura" value="5" id="laura-5" checked>
+                                    <label for="laura-5" class="estrella"></label>
+                                    <input type="radio" name="rating-laura" value="4" id="laura-4">
+                                    <label for="laura-4" class="estrella"></label>
+                                    <input type="radio" name="rating-laura" value="3" id="laura-3">
+                                    <label for="laura-3" class="estrella"></label>
+                                    <input type="radio" name="rating-laura" value="2" id="laura-2">
+                                    <label for="laura-2" class="estrella"></label>
+                                    <input type="radio" name="rating-laura" value="1" id="laura-1">
+                                    <label for="laura-1" class="estrella"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Entrenador 1 -->
+                    <div class="col-md-4 col-lg-3 mb-4 tarjeta-entrenador">
+                        <div class="tarjeta-inner">
+                            <div class="tarjeta-frontal">
+                                <img src="assets/img/entrenador1.jpg" alt="Entrenador 1" class="img-fluid">
+                                <h3>Juan Pérez</h3>
+                                <p>Especialidad: Musculación</p>
+                            </div>
+                            <div class="tarjeta-trasera">
+                                <h4>Sobre Juan</h4>
+                                <p>Entrenador certificado con 10 años de experiencia. Apasionado por ayudarte a alcanzar tus metas de fuerza y crecimiento muscular.</p>
+                                <div class="habilidades">
+                                    <div class="habilidad">
+                                        <span>Fuerza</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="90">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habilidad">
+                                        <span>Técnica</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="85">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habilidad">
+                                        <span>Motivación</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="95">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating" data-entrenador="juan">
+                                    <input type="radio" name="rating-juan" value="5" id="juan-5">
+                                    <label for="juan-5" class="estrella"></label>
+                                    <input type="radio" name="rating-juan" value="4" id="juan-4" checked>
+                                    <label for="juan-4" class="estrella"></label>
+                                    <input type="radio" name="rating-juan" value="3" id="juan-3">
+                                    <label for="juan-3" class="estrella"></label>
+                                    <input type="radio" name="rating-juan" value="2" id="juan-2">
+                                    <label for="juan-2" class="estrella"></label>
+                                    <input type="radio" name="rating-juan" value="1" id="juan-1">
+                                    <label for="juan-1" class="estrella"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Entrenador 2 -->
+                    <div class="col-md-4 col-lg-3 mb-4 tarjeta-entrenador">
+                        <div class="tarjeta-inner">
+                            <div class="tarjeta-frontal">
+                                <img src="assets/img/entrenador3.jpg" alt="Entrenadora 2" class="img-fluid">
+                                <h3>Ana Gómez</h3>
+                                <p>Especialidad: Yoga & Flexibilidad</p>
+                            </div>
+                            <div class="tarjeta-trasera">
+                                <h4>Sobre Ana</h4>
+                                <p>Instructora de yoga con enfoque en mejorar la flexibilidad, el equilibrio y la conexión mente-cuerpo. Clases para todos los niveles.</p>
+                                <div class="habilidades">
+                                    <div class="habilidad">
+                                        <span>Flexibilidad</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="92">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habilidad">
+                                        <span>Equilibrio</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="88">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habilidad">
+                                        <span>Relajación</span>
+                                        <div class="progress barra-habilidad" data-porcentaje="98">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating" data-entrenador="ana">
+                                    <input type="radio" name="rating-ana" value="5" id="ana-5" checked>
+                                    <label for="ana-5" class="estrella"></label>
+                                    <input type="radio" name="rating-ana" value="4" id="ana-4">
+                                    <label for="ana-4" class="estrella"></label>
+                                    <input type="radio" name="rating-ana" value="3" id="ana-3">
+                                    <label for="ana-3" class="estrella"></label>
+                                    <input type="radio" name="rating-ana" value="2" id="ana-2">
+                                    <label for="ana-2" class="estrella"></label>
+                                    <input type="radio" name="rating-ana" value="1" id="ana-1">
+                                    <label for="ana-1" class="estrella"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <h5>Suscribite a nuestro newsletter</h5>
+                    <form class="needs-validation" novalidate>
+                        <div class="mb-3 position-relative">
+                            <input type="email" class="form-control" placeholder="Tu email" aria-label="Email para newsletter" required>
+                            <div class="invalid-feedback">Por favor, ingrese un correo válido.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Suscribirme</button>
+                        <div class="spinner-border text-light mt-2 d-none" role="status">
+                            <span class="visually-hidden">Enviando...</span>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5>Seguinos</h5>
+                    <ul class="list-unstyled d-inline-block">
+                        <li><a href="https://www.facebook.com/" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>Facebook</li>
+                        <li><a href="https://www.instagram.com/" class="text-white me-3" aria-label="Instagram"><i class="fab fa-instagram"></i></a>Instagram</li>
+                        <li><a href="https://x.com/" class="text-white" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a> Twitter</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5>Nuestra ubicación</h5>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.939!2d-65.304!3d-24.185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0!2zMjTCsDExJzA2LjAiUyA2NcKwMTgnMTQuNCJX!5e0!3m2!1ses!2sar!4v1610000000000" width="100%" height="150" style="border:0;" allowfullscreen loading="lazy" aria-label="Mapa del gimnasio"></iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Scripts personalizados -->
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>

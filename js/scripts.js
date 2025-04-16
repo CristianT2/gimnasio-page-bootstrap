@@ -131,4 +131,77 @@ $(document).ready(function () {
             }, 350);
         }
     });
+
+    //FUNCIONES PARA ENTRENADORES.HTML
+    // Animar barras de habilidades al cargar (entrenadores.html)
+    $('.progress.barra-habilidad').each(function() {
+        var $bar = $(this).find('.progress-bar');
+        var porcentaje = $(this).data('porcentaje');
+        $bar.animate({
+            width: porcentaje + '%'
+        }, {
+            duration: 1000,
+            easing: 'swing',
+            step: function(now) {
+                $bar.attr('aria-valuenow', Math.round(now));
+            }
+        });
+    });
+
+    // Manejar rating con estrellas (entrenadores.html)
+    $('.rating input').on('change', function() {
+        var $rating = $(this).closest('.rating');
+        var value = $(this).val();
+        $rating.find('label.estrella').each(function() {
+            var $label = $(this);
+            var inputValue = $label.attr('for').split('-')[1];
+            if (inputValue <= value) {
+                $label.addClass('activa');
+            } else {
+                $label.removeClass('activa');
+            }
+        });
+    });
+
+    // Hover en estrellas
+    $('.rating label.estrella').on('mouseenter', function() {
+        var $rating = $(this).closest('.rating');
+        var hoverValue = $(this).attr('for').split('-')[1];
+        $rating.find('label.estrella').each(function() {
+            var $label = $(this);
+            var inputValue = $label.attr('for').split('-')[1];
+            if (inputValue <= hoverValue) {
+                $label.addClass('activa');
+            } else {
+                $label.removeClass('activa');
+            }
+        });
+    });
+
+    $('.rating').on('mouseleave', function() {
+        var $rating = $(this);
+        var checkedValue = $rating.find('input:checked').val() || 0;
+        $rating.find('label.estrella').each(function() {
+            var $label = $(this);
+            var inputValue = $label.attr('for').split('-')[1];
+            if (inputValue <= checkedValue) {
+                $label.addClass('activa');
+            } else {
+                $label.removeClass('activa');
+            }
+        });
+    });
+
+    // Inicializar estrellas según valor inicial
+    $('.rating').each(function() {
+        var $rating = $(this);
+        var checkedValue = $rating.find('input:checked').val() || 0;
+        $rating.find('label.estrella').each(function() {
+            var $label = $(this);
+            var inputValue = $label.attr('for').split('-')[1];
+            if (inputValue <= checkedValue) {
+                $label.addClass('activa');
+            }
+        });
+    });
 });

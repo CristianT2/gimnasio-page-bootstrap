@@ -399,3 +399,204 @@ footer .btn-primary:hover {
         font-size: 0.9rem;
     }
 }
+
+/* Estilos para entrenadores.html */
+.entrenadores {
+    padding: 40px 20px;
+    text-align: center;
+    background: var(--color-fondo);
+}
+
+.entrenadores h2 {
+    color: var(--color-texto);
+}
+
+.contenedor-entrenadores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Tarjeta entrenador */
+.tarjeta-entrenador {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    position: relative;
+}
+
+.tarjeta-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.tarjeta-entrenador:hover .tarjeta-inner {
+    transform: rotateY(180deg);
+}
+
+.tarjeta-frontal, .tarjeta-trasera {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.tarjeta-frontal {
+    background: var(--card-bg);
+    color: var(--color-texto);
+    padding: 20px;
+    justify-content: center;
+}
+
+.tarjeta-trasera {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    transform: rotateY(180deg);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Imagen frontal */
+.tarjeta-frontal img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.tarjeta-frontal h3 {
+    margin-bottom: 5px;
+    color: var(--color-texto);
+}
+
+.tarjeta-frontal p {
+    font-size: 0.9em;
+    color: var(--color-texto);
+}
+
+/* Trasera */
+.tarjeta-trasera h4 {
+    margin-bottom: 10px;
+}
+
+.tarjeta-trasera p {
+    font-size: 0.85em;
+    margin-bottom: 15px;
+}
+
+/* Habilidades */
+.habilidades {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.habilidad {
+    margin-bottom: 12px;
+}
+
+.habilidad span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    color: var(--color-blanco);
+    text-align: left;
+}
+
+.progress.barra-habilidad {
+    height: 10px;
+    background: var(--color-secundario);
+    border-radius: 5px;
+}
+
+.progress-bar {
+    background: var(--color-destacado);
+    transition: width 1s ease-in-out;
+}
+
+/* Estrellas */
+.rating {
+    display: flex;
+    flex-direction: row-reverse; /* Para que el hover funcione de derecha a izquierda */
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label.estrella {
+    width: 25px;
+    height: 25px;
+    background: var(--color-texto);
+    -webkit-mask: url('../assets/svg/star_77949.svg') center/contain no-repeat;
+    mask: url('../assets/svg/star_77949.svg') center/contain no-repeat;
+    margin: 0 3px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.rating input:checked ~ label.estrella,
+.rating label.estrella:hover,
+.rating label.estrella:hover ~ label.estrella {
+    background: gold;
+    transform: scale(1.2);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .tarjeta-entrenador {
+        width: 250px;
+        height: 350px;
+    }
+
+    .tarjeta-frontal img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .tarjeta-frontal h3 {
+        font-size: 1.2rem;
+    }
+
+    .tarjeta-frontal p {
+        font-size: 0.8em;
+    }
+
+    .tarjeta-trasera p {
+        font-size: 0.75em;
+    }
+
+    .habilidad span {
+        font-size: 0.85em;
+    }
+
+    .rating label.estrella {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tarjeta-entrenador {
+        width: 100%;
+        max-width: 300px;
+        height: 400px;
+    }
+
+    .contenedor-entrenadores {
+        gap: 20px;
+    }
+}
