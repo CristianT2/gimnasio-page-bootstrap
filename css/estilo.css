@@ -3,18 +3,20 @@
     --color-primario: #222222;    /* Fondo oscuro */
     --color-secundario: #ecf0f1;  /* Fondo claro */
     --color-destacado: #169976;   /* Verde para énfasis */
-    --color-texto: #333;          /* Texto principal */
-    --color-fondo: #fff;          /* Fondo claro */
-    --card-bg: #ecf0f1;           /* Fondo tarjetas */
+    --color-texto: #1a1a1a;       /* Texto principal */
+    --color-fondo: #ffffff;       /* Fondo claro */
+    --color-blanco: #ffffff;      /* Blanco fijo */
+    --card-bg: #f5f5f5;           /* Fondo tarjetas */
     --shadow: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {
-    --color-primario: #169976;    /* Verde como principal */
-    --color-secundario: #333;     /* Fondo oscuro secundario */
-    --color-destacado: #ecf0f1;   /* Claro para énfasis */
+    --color-primario: #1a1a1a;    /* Gris oscuro para fondos */
+    --color-secundario: #169976;  /* Verde para textos/botones */
+    --color-destacado: #2ecc71;   /* Verde claro para énfasis */
     --color-texto: #ecf0f1;       /* Texto claro */
-    --color-fondo: #000000;       /* Fondo oscuro */
+    --color-fondo: #121212;       /* Fondo oscuro */
+    --color-blanco: #ffffff;      /* Blanco fijo */
     --card-bg: #2c2c2c;           /* Fondo tarjetas oscuro */
     --shadow: rgba(0, 0, 0, 0.5);
 }
@@ -37,7 +39,7 @@ body {
 }
 
 .navbar-nav .nav-link {
-    color: var(--color-secundario);
+    color: var(--color-blanco);
     padding: 0.5rem 1rem;
     transition: background 0.3s ease;
 }
@@ -45,7 +47,7 @@ body {
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
     background: var(--color-destacado);
-    color: var(--color-fondo);
+    color: var(--color-primario);
 }
 
 .dropdown-menu {
@@ -53,13 +55,13 @@ body {
 }
 
 .dropdown-item {
-    color: var(--color-secundario);
+    color: var(--color-blanco);
 }
 
 .dropdown-item:hover,
 .dropdown-item:focus {
     background: var(--color-destacado);
-    color: var(--color-fondo);
+    color: var(--color-primario);
 }
 
 /* Hero */
@@ -91,11 +93,13 @@ body {
 
 .hero-overlay p {
     font-size: 1.5rem;
+    color: var(--color-blanco);
 }
 
 .hero-overlay .btn-primary {
-    background: var(--color-primario);
+    background: var(--color-destacado);
     border-color: var(--color-destacado);
+    color: var(--color-primario);
     padding: 1rem 2rem;
     border-radius: 5px;
     transition: transform 0.3s ease;
@@ -103,6 +107,8 @@ body {
 
 .hero-overlay .btn-primary:hover {
     transform: scale(1.1);
+    background: var(--color-secundario);
+    color: var(--color-blanco);
 }
 
 @keyframes fadeIn {
@@ -131,7 +137,7 @@ body {
 /* Contador */
 .contador {
     background: var(--color-primario);
-    color: var(--color-secundario);
+    color: var(--color-blanco);
     padding: 4rem 0;
 }
 
@@ -155,19 +161,241 @@ body {
 /* Footer */
 footer {
     background: var(--color-primario);
-    color: var(--color-secundario);
+    color: var(--color-blanco);
 }
 
 footer .btn-primary {
-    background: var(--color-primario);
+    background: var(--color-destacado);
     border-color: var(--color-destacado);
+    color: var(--color-primario);
 }
 
 footer .btn-primary:hover {
-    background: darken(var(--color-destacado), 10%);
+    background: var(--color-secundario);
+    color: var(--color-blanco);
 }
 
 /* Botón tema */
 .theme-icon {
     font-size: 1.2rem;
+}
+
+/* Estilos para clases.html */
+
+/* Filtros */
+.filtros {
+    max-width: 1200px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.filtros h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-texto);
+}
+
+.filtro-opciones {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filtro-opciones .btn {
+    padding: 0.5rem 1rem;
+    background: var(--color-secundario);
+    border-radius: 5px;
+    color: var(--color-primario);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.filtro-opciones .btn.active,
+.filtro-opciones .btn:hover {
+    background: var(--color-destacado);
+    color: var(--color-primario);
+}
+
+/* Tarjetas de clases */
+.clases-destacadas {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    text-align: center;
+}
+
+.clases-destacadas h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-texto);
+}
+
+.tarjetas {
+    gap: 2rem;
+    justify-content: center;
+}
+
+.tarjeta-clase {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.tarjeta-clase .card {
+    background: transparent;
+    border: none;
+}
+
+.tarjeta-clase .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-clase .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff; /* Texto blanco fijo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tarjeta-clase:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.tarjeta-clase:hover .overlay {
+    opacity: 1;
+}
+
+/* Galería masonry */
+.galeria-masonry {
+    padding: 7px;
+    text-align: center;
+}
+
+.galeria-masonry h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-texto);
+}
+
+.masonry-grid {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.masonry-item {
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.masonry-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.masonry-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Horarios */
+.horarios {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    text-align: center;
+}
+
+.horarios h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-texto);
+}
+
+.horarios .table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-destacado);
+}
+
+.horarios td {
+    padding: 1rem;
+    border: 1px solid var(--color-destacado);
+    background: var(--card-bg);
+    color: var(--color-texto);
+}
+
+.horarios th {
+    border: 1px solid var(--color-destacado);
+    background: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+/* Responsividad de la tabla con Bootstrap */
+@media (max-width: 768px) {
+    .horarios .table {
+        display: block;
+    }
+
+    .horarios thead {
+        display: none;
+    }
+
+    .horarios tbody,
+    .horarios tr {
+        display: block;
+    }
+
+    .horarios td {
+        display: block;
+        text-align: left;
+        padding: 0.5rem 1rem;
+        border: none;
+        position: relative;
+        background: var(--card-bg);
+    }
+
+    .horarios td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: inline-block;
+        width: 40%;
+        padding-right: 1rem;
+        color: var(--color-secundario);
+    }
+
+    .horarios td[data-label="Día"] {
+        font-weight: bold;
+        background: var(--color-primario);
+        color: var(--color-blanco);
+        padding: 0.75rem 1rem;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .horarios td {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .horarios td:before {
+        width: 50%;
+        font-size: 0.9rem;
+    }
 }
