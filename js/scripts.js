@@ -276,4 +276,32 @@ $(document).ready(function () {
         }
         $form.addClass('was-validated');
     });
+
+    //Funciones para precios.html
+
+    // Resaltar fila y columna en la tabla de precios
+    $('.table td, .table th').on('click', function() {
+        $('.table td, .table th').removeClass('highlight');
+        var $cell = $(this);
+        var $row = $cell.closest('tr');
+        var colIndex = $cell.index();
+        $row.find('td, th').addClass('highlight');
+        $cell.closest('table').find('tr').each(function() {
+            $(this).find('td:eq(' + colIndex + '), th:eq(' + colIndex + ')').addClass('highlight');
+        });
+    });
+
+    // Toggle mensual/anual para precios
+    $('#pricingToggle').on('change', function() {
+        var isYearly = $(this).is(':checked');
+        $('.price').each(function() {
+            var $price = $(this);
+            var monthly = $price.data('monthly');
+            var yearly = $price.data('yearly');
+            $price.text(isYearly ? '$' + yearly + '/año' : '$' + monthly + '/mes');
+        });
+    });
+
+    // Inicializar tooltips
+    $('[data-bs-toggle="tooltip"]').tooltip();
 });
