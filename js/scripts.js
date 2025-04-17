@@ -204,4 +204,76 @@ $(document).ready(function () {
             }
         });
     });
+
+    //Funciones para contacto.html
+    // Validación en tiempo real para contacto
+    $('.form-contacto .form-control').on('input change', function() {
+        var $input = $(this);
+        var id = $input.attr('id');
+
+        if (id === 'nombre' || id === 'apellido' || id === 'asunto') {
+            if ($input.val().trim().length >= $input.attr('minlength')) {
+                $input.addClass('is-valid').removeClass('is-invalid');
+            } else {
+                $input.addClass('is-invalid').removeClass('is-valid');
+            }
+        } else if (id === 'email') {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailPattern.test($input.val())) {
+                $input.addClass('is-valid').removeClass('is-invalid');
+            } else {
+                $input.addClass('is-invalid').removeClass('is-valid');
+            }
+        } else if (id === 'telefono') {
+            var telPattern = /^[0-9]{10}$/;
+            if ($input.val() === '' || telPattern.test($input.val())) {
+                $input.addClass('is-valid').removeClass('is-invalid');
+            } else {
+                $input.addClass('is-invalid').removeClass('is-valid');
+            }
+        } else if (id === 'edad') {
+            var edad = parseInt($input.val());
+            if ($input.val() === '' || (!isNaN(edad) && edad >= 16 && edad <= 100)) {
+                $input.addClass('is-valid').removeClass('is-invalid');
+            } else {
+                $input.addClass('is-invalid').removeClass('is-valid');
+            }
+        } else if (id === 'motivo') {
+            if ($input.val() !== '') {
+                $input.addClass('is-valid').removeClass('is-invalid');
+            } else {
+                $input.addClass('is-invalid').removeClass('is-valid');
+            }
+        } else if (id === 'mensaje') {
+            if ($input.val().trim().length > 0) {
+                $input.addClass('is-valid').removeClass('is-invalid');
+            } else {
+                $input.addClass('is-invalid').removeClass('is-valid');
+            }
+        }
+    });
+
+    //Manejo de modal y spinner
+    $('form.needs-validation').on('submit', function(event) {
+        var $form = $(this);
+        var $spinner = $form.find('.spinner-border');
+        event.preventDefault();
+        event.stopPropagation();
+    
+        if (this.checkValidity()) {
+            $spinner.removeClass('d-none').fadeIn(200);
+            setTimeout(function() {
+                $spinner.fadeOut(200, function() {
+                    $spinner.addClass('d-none');
+                });
+                $form[0].reset();
+                $form.removeClass('was-validated');
+                $form.find('.form-control').removeClass('is-valid is-invalid');
+                if ($form.hasClass('form-contacto')) {
+                    $('#contactoModal').modal('show');
+                }
+            }, 2000);
+        }
+        $form.addClass('was-validated');
+    });
 });
