@@ -302,6 +302,86 @@ $(document).ready(function () {
         });
     });
 
-    // Inicializar tooltips
-    $('[data-bs-toggle="tooltip"]').tooltip();
+    //Funciones para blog.html
+    // Inicializar filtros al cargar la página
+    $('.articulos .articulo').fadeIn(0);
+    $('.filtro-opciones .btn[data-filter="todos"]').addClass('active');
+
+    // Función de filtrado de artículos
+    $('.filtro-opciones .btn').on('click', function() {
+        console.log('Filtro clicado:', $(this).data('filter'));
+        $('.filtro-opciones .btn').removeClass('active');
+        $(this).addClass('active');
+        var filter = $(this).data('filter');
+        $('.articulos .articulo').fadeOut(0);
+        if (filter === 'todos') {
+            $('.articulos .articulo').fadeIn(300);
+        } else {
+            $('.articulos .articulo[data-category="' + filter + '"]').fadeIn(300);
+        }
+    });
+
+    // Función para responder comentarios
+    $(document).on('click', '.responder', function() {
+        console.log('Botón Responder clicado');
+        var $comment = $(this).closest('.comment');
+        var $replyForm = $comment.find('.reply-form');
+        if ($replyForm.length === 0) {
+            $comment.append(`
+                <div class="reply-form">
+                    <input type="text" placeholder="Tu nombre" class="form-control mb-2" />
+                    <textarea placeholder="Escribe tu respuesta..." rows="3" class="form-control"></textarea>
+                    <button class="btn btn-sm mt-2">Enviar</button>
+                </div>
+            `);
+            $replyForm = $comment.find('.reply-form');
+        }
+        $replyForm.slideToggle(300);
+    });
+
+    // Función para enviar respuestas a comentarios
+    $(document).on('click', '.reply-form button', function() {
+        console.log('Botón Enviar clicado');
+        var $replyForm = $(this).closest('.reply-form');
+        var $textarea = $replyForm.find('textarea');
+        var $nameInput = $replyForm.find('input');
+        var responseText = $textarea.val().trim();
+        var userName = $nameInput.val().trim() || 'Anónimo';
+        var userInitials = userName.charAt(0).toUpperCase() || 'A';
+        if (responseText) {
+            var $comment = $replyForm.closest('.comment');
+            $comment.append(`
+                <div class="comment reply" data-user="${userName}" data-user-initials="${userInitials}">
+                    <p><strong>${userName}:</strong> ${responseText}</p>
+                </div>
+            `);
+            $textarea.val('');
+            $nameInput.val('');
+            $replyForm.slideUp(300);
+        }
+    });
+
+    // Función para destacar comentarios
+    $(document).on('click', '.destacar', function() {
+        console.log('Botón Destacar clicado');
+        var $comment = $(this).closest('.comment');
+        var $button = $(this);
+        $comment.toggleClass('destacado');
+        $button.text($comment.hasClass('destacado') ? 'Quitar destaque' : 'Destacar');
+    });
+});
+
+// Inicialización de AOS para animaciones de scroll reveal
+$(window).on('load', function() {
+    AOS.init({
+        duration: 1000, // Duración de la animación (1s)
+        once: false,    // Las animaciones se repiten al volver a hacer scroll
+        offset: 150,    // Inicia la animación 100px antes de que el elemento sea visible
+        delay: 0,        // Sin retraso adicional
+        easing: 'ease-out-cubic', // Curva de animación más suave
+        anchorPlacement: 'top-bottom' // Iniciar cuando la parte superior del elemento toca el fondo del viewport
+    });
+    console.log('AOS initialized');
+    // Refrescar AOS después de la carga inicial
+    AOS.refresh();
 });
